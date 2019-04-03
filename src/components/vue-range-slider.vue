@@ -12,7 +12,7 @@
       <div @mousedown="btnMousedown" class="percentum-btn"></div>
     </div>
     <!-- 刻度 -->
-    <div ref="scaleLine" class="scale-wrapper">
+    <div v-if="isShowScaleLine" ref="scaleLine" class="scale-wrapper">
       <span v-for="item in scaleDate" class="scale-text" :style="{left: `${item.index/(dataArray.length-1) * 100}%`}" :key="item.index">{{item.text}}</span>
     </div>
   </div>
@@ -30,6 +30,12 @@ export default {
       type: Number,
       default: () => {
         return 0
+      }
+    },
+    isShowScaleLine: {
+      type: Boolean,
+      default: () => {
+        return true
       }
     }
   },
@@ -75,12 +81,11 @@ export default {
     }
   },
   mounted() {
-    let _this = this
     this.setCurrentPosition()
     this.setScaleLine()
   },
   watch: {
-    currentIndex(newValue) {
+    currentIndex() {
       this.setCurrentPosition()
     },
     dataArray: {
@@ -118,7 +123,7 @@ export default {
       }
     },
     //
-    btnMousedown(e) {
+    btnMousedown() {
       let _this = this
       // sidler 距离视口的距离
       let SilderLeft = _this.$refs.silderBar.getBoundingClientRect().left
@@ -138,7 +143,7 @@ export default {
         let _currentIndex = Math.round(prcentage * (_this.dataArray.length-1))
         _this.$emit('setDataIndex', _currentIndex)
       }
-      document.onmouseup = function(ue) {
+      document.onmouseup = function() {
         document.onmousemove = null
       }
     },
@@ -155,6 +160,9 @@ export default {
     },
     // 设置刻度线
     setScaleLine() {
+      if (!this.isShowScaleLine) {
+        return
+      }
       this.$nextTick(() => {
         this.scaleZoom = 0
         // 重置参数
