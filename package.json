@@ -1,16 +1,19 @@
 {
-  "name": "vue-range-slider",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-range-sliderc",
+  "version": "1.0.5",
+  "private": false,
+  "main": "lib/vue-range-sliderc.umd.min.js",
+  "keywords": ["vue-range-slider", "vue"],
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --vue-range-sliderc --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.6",
-    "vue-router": "^3.0.1"
+    "vue": "^2.6.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",

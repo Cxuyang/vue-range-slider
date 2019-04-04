@@ -1,10 +1,10 @@
 <div align="center">
-  <h1>Vue-Range-Slider</h1>
+  <h1>Vue-Range-Sliderc</h1>
 </div>
 
 基于vue的范围拖动条组件
 
-![demo](./src/assets/demo.gif)
+![demo](https://github.com/Cxuyang/vue-range-slider/blob/master/examples/assets/demo.gif)
 
 ## Features
 
@@ -83,6 +83,11 @@ export default {
 | isShowScaleLine | Boolean |   是否显示刻度条                                       |
 | currentIndex | Number |   当前数据索引                                             |
 
+### Function
+
+| 函数名      | 参数   | 备注                                                         |
+| --------- | ------ | ------------------------------------------------------------ |
+| setDataIndex   | index |    当前数据索引                                           |
 
 ## 期望
 
