@@ -1,7 +1,8 @@
 <div align="center">
   <h1>Vue-Range-Sliderc</h1>
 </div>
-
+<a href="https://www.npmjs.com/package/vue-range-sliderc"><img src="https://img.shields.io/npm/v/vue-range-sliderc.svg" /></a> 
+<a href="https://npm-stat.com/charts.html?package=vue-range-sliderc"><img src="https://img.shields.io/npm/dt/vue-range-sliderc.svg" /></a>
 基于vue的范围拖动条组件
 
 ![demo](https://github.com/Cxuyang/vue-range-slider/blob/master/examples/assets/demo.gif)
@@ -12,16 +13,30 @@
 - 根据数据索引来改变播放进度
 - 支持刻度线动态显示(为了更好的显示,尽量保证每个数据项文本长度一致)
 
+## Installation
+
+```
+$ npm install vue-range-sliderc
+or
+$ yarn add vue-range-sliderc
+
+```
+
 ## Usage
+
+```main.js
+import VueRangeSilderc from 'vue-range-sliderc'
+import 'vue-range-sliderc/lib/vue-range-sliderc.css'
+Vue.use(VueRangeSilderc)
+```
 
 ```vue
 <template>
   <div class="app-wrapper">
-    <vueRangeSilder :dataArray="dataArray" :currentIndex="currentIndex" :isShowScaleLine="isShowScaleLine" @setDataIndex="setDataIndex"/>
+    <vueRangeSilderc :dataArray="dataArray" :currentIndex="currentIndex" :isShowScaleLine="isShowScaleLine" @setDataIndex="setDataIndex"/>
   </div>
 </template>
 <script>
-import vueRangeSilder from '@/components/vue-range-slider.vue' // 请确保你引入vue-range-slider组件
 
 export default {
   data() {
@@ -73,15 +88,15 @@ export default {
 
 ## Demo
 
-源码请前往 [components](https://github.com/Cxuyang/vue-range-slider/blob/master/src/components/vue-range-slider.vue) 目录
+源码请前往 [components](https://github.com/Cxuyang/vue-range-slider/blob/master/examples/components/vue-range-slider.vue) 目录
 
 ### Available props
 
-| 参数      | 类型   | 备注                                                         |
-| --------- | ------ | ------------------------------------------------------------ |
-| dataArray   | Array |    Vue-Range-Slider数据列表                                 |
-| isShowScaleLine | Boolean |   是否显示刻度条                                       |
-| currentIndex | Number |   当前数据索引                                             |
+| 参数            | 类型     | 默认值 |  备注                     |
+| ---------       | ------  |------ | --------------------------|
+| dataArray       | Array   | []    | Vue-Range-Slider数据列表   |
+| isShowScaleLine | Boolean | true  |  是否显示刻度条             |
+| currentIndex    | Number  |  0    | 当前数据索引                |
 
 ### Function
 
