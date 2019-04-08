@@ -79,9 +79,6 @@ export default {
     setDataIndex(index) {
       this.currentIndex = index
     },
-  },
-  components: {
-    vueRangeSilder
   }
 }
 </script>
