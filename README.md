@@ -3,6 +3,8 @@
 </div>
 <a href="https://www.npmjs.com/package/vue-range-sliderc"><img src="https://img.shields.io/npm/v/vue-range-sliderc.svg" /></a> 
 <a href="https://npm-stat.com/charts.html?package=vue-range-sliderc"><img src="https://img.shields.io/npm/dt/vue-range-sliderc.svg" /></a>
+
+
 基于vue的范围拖动条组件
 
 ![demo](https://github.com/Cxuyang/vue-range-slider/blob/master/examples/assets/demo.gif)
